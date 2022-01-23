@@ -4,7 +4,7 @@ import HeroesApp from './HeroesApp'
 
 ReactDOM.render(
   <React.StrictMode>
-    <HeroesApp />
+    <HeroesApp  />
   </React.StrictMode>,
   document.getElementById('root')
 )
