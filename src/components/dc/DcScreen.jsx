@@ -1,11 +1,15 @@
 import { HeroList } from "../hero/HeroList"
+import { getHeroesByPublisher } from '../../selectors/getHeroesByPublisher'
 
 export const DcScreen = () => {
-    return(
+    const publisher = 'DC Comics'
+    const heroes = getHeroesByPublisher(publisher)
+
+    return (
         <div>
             <h1>Dc Screen</h1>
             <hr />
-            <HeroList publisher='DC Comics'/>
+            <HeroList heroes={heroes} />
         </div>
     )
 }

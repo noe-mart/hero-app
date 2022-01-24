@@ -1,7 +1,25 @@
+import { useParams } from "react-router-dom"
+import { searchByName } from "../../selectors/search"
+import { HeroList } from "../hero/HeroList"
+
+
 export const SearchScreen = () => {
-    return(
+    const { keyword } = useParams()
+
+    const heroes = searchByName(keyword.toLocaleLowerCase())
+
+
+
+    return (
         <div>
-            <h1>Search Screen</h1>
+            {
+                heroes.length > 0
+                    ? <>
+                        <h1>Resultado</h1>
+                        <HeroList heroes={heroes} />
+                    </>
+                    : <h1>Opssss No hemos encontrado nada</h1>
+            }
         </div>
     )
 }
